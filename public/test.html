@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Web Builder - Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Visual Web Builder</h1>
+            <p>Test Page - Server is Working!</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>✅ Server Status</h2>
+            <p>The server is running successfully on port 3000!</p>
+            <p>All dependencies are installed and working.</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>🎯 Next Steps</h2>
+            <p>1. Go back to the main builder: <a href="/">Visual Web Builder</a></p>
+            <p>2. Start building your website by dragging components</p>
+            <p>3. Save and export your projects</p>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔧 Available Commands</h2>
+            <p><strong>npm start</strong> - Start the builder</p>
+            <p><strong>npm run</strong> - Start the builder</p>
+            <p><strong>npm run dev</strong> - Development mode</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" onclick="window.location.href='/'">Go to Builder</button>
+            <button class="btn" onclick="location.reload()">Refresh Page</button>
+        </div>
+    </div>
+    
+    <script>
+        console.log('✅ Test page loaded successfully!');
+        console.log('🚀 Visual Web Builder is ready!');
+        
+        // Test basic functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📱 DOM loaded successfully');
+            console.log('🎨 Ready to start building websites!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Web Builder - Create Websites Without Coding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="builder-container">
+        <!-- Header -->
+        <header class="builder-header">
+            <div class="header-left">
+                <h1><i class="fas fa-paint-brush"></i> Visual Web Builder</h1>
+                <span class="version">v1.0.0</span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-primary" onclick="previewWebsite()">
+                    <i class="fas fa-eye"></i> Preview
+                </button>
+                <button class="btn btn-success" onclick="saveProject()">
+                    <i class="fas fa-save"></i> Save Project
+                </button>
+                <button class="btn btn-info" onclick="exportCode()">
+                    <i class="fas fa-download"></i> Export
+                </button>
+            </div>
+        </header>
+
+        <div class="builder-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Components</h3>
+                    <div class="component-list">
+                        <div class="component-item" draggable="true" data-type="text">
+                            <i class="fas fa-font"></i> Text
+                        </div>
+                        <div class="component-item" draggable="true" data-type="heading">
+                            <i class="fas fa-heading"></i> Heading
+                        </div>
+                        <div class="component-item" draggable="true" data-type="button">
+                            <i class="fas fa-square"></i> Button
+                        </div>
+                        <div class="component-item" draggable="true" data-type="image">
+                            <i class="fas fa-image"></i> Image
+                        </div>
+                        <div class="component-item" draggable="true" data-type="container">
+                            <i class="fas fa-box"></i> Container
+                        </div>
+                        <div class="component-item" draggable="true" data-type="link">
+                            <i class="fas fa-link"></i> Link
+                        </div>
+                        <div class="component-item" draggable="true" data-type="list">
+                            <i class="fas fa-list"></i> List
+                        </div>
+                        <div class="component-item" draggable="true" data-type="form">
+                            <i class="fas fa-wpforms"></i> Form
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-palette"></i> Styles</h3>
+                    <div class="style-controls">
+                        <div class="control-group">
+                            <label>Background Color:</label>
+                            <input type="color" id="bgColor" value="#ffffff">
+                        </div>
+                        <div class="control-group">
+                            <label>Text Color:</label>
+                            <input type="color" id="textColor" value="#000000">
+                        </div>
+                        <div class="control-group">
+                            <label>Font Size:</label>
+                            <input type="range" id="fontSize" min="12" max="72" value="16">
+                            <span id="fontSizeValue">16px</span>
+                        </div>
+                        <div class="control-group">
+                            <label>Font Family:</label>
+                            <select id="fontFamily">
+                                <option value="Arial">Arial</option>
+                                <option value="Helvetica">Helvetica</option>
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Verdana">Verdana</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-folder"></i> Projects</h3>
+                    <div class="project-list">
+                        <button class="btn btn-small" onclick="loadProjects()">
+                            <i class="fas fa-refresh"></i> Refresh
+                        </button>
+                        <div id="projectList"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Canvas -->
+            <main class="canvas-container">
+                <div class="canvas-header">
+                    <h3><i class="fas fa-desktop"></i> Website Canvas</h3>
+                    <div class="canvas-controls">
+                        <button class="btn btn-small" onclick="clearCanvas()">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                        <button class="btn btn-small" onclick="undo()">
+                            <i class="fas fa-undo"></i> Undo
+                        </button>
+                    </div>
+                </div>
+                <div class="canvas" id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="canvas-placeholder">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <p>Drag components here to start building your website</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Properties Panel -->
+            <aside class="properties-panel">
+                <h3><i class="fas fa-cog"></i> Properties</h3>
+                <div id="propertiesContent">
+                    <p>Select an element to edit its properties</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Website Preview</h3>
+                <span class="close" onclick="closePreview()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="previewFrame" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Save Modal -->
+    <div id="saveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Save Project</h3>
+                <span class="close" onclick="closeSaveModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Project Name:</label>
+                    <input type="text" id="projectName" placeholder="Enter project name">
+                </div>
+                <button class="btn btn-primary" onclick="confirmSave()">Save Project</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "name": "visual-web-builder",
+  "version": "1.0.0",
+  "description": "Visual Web Builder - Create websites without coding",
+  "main": "lib/builder.js",
+  "bin": {
+    "visual-web-builder": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "run": "node server.js",
+    "dev": "node server.js --dev",
+    "build": "node build.js",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "visual-builder",
+    "website-builder",
+    "drag-drop",
+    "no-code",
+    "web-design",
+    "html-generator",
+    "css-generator",
+    "website-creator"
+  ],
+  "author": "YOUR_NAME <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/visual-web-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/visual-web-builder/issues"
+  },
+    "homepage": "https://github.com/YOUR_USERNAME/visual-web-builder#readme",
+  "files": [
+    "lib/",
+    "bin/",
+    "public/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.5.0",
+    "express": "^4.18.2",
+    "fs-extra": "^11.1.1",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
