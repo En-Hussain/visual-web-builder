@@ -571,10 +571,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Issues**: [GitHub Issues](https://github.com/En-Hussain/visual-web-builder/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/En-Hussain/visual-web-builder/discussions)
 
-### 💬 Community
-- **Discord**: [Join our Discord](https://discord.gg/visual-web-builder)
-- **Twitter**: [@VisualWebBuilder](https://twitter.com/visualwebbuilder)
-- **Reddit**: [r/VisualWebBuilder](https://reddit.com/r/visualwebbuilder)
 
 ---
 
