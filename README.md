@@ -76,7 +76,7 @@ Navigate to: `http://localhost:3000`
 <div align="center">
 
 ### Main Interface
-![Main Interface](https://via.placeholder.com/800x400/667eea/ffffff?text=Visual+Web+Builder+Interface)
+![Main Interface]([https://via.placeholder.com/800x400/667eea/ffffff?text=Visual+Web+Builder+Interface](https://raw.githubusercontent.com/En-Hussain/visual-web-builder/main/screenshots/main-interface.png))
 
 *Clean, intuitive interface with drag-and-drop functionality*
 
