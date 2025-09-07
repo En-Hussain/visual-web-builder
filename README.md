@@ -584,7 +584,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/En-Hussain/visual-web-builder)
 [![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/visual-web-builder)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/visualwebbuilder)
 
 </div>
 
